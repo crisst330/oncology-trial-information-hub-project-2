@@ -1,5 +1,6 @@
 import express from 'express';
 import process from 'process';
+import trialsRouter from "./routes/trials.js";
 
 const PORT = process.env.PORT || 3000;
 
@@ -9,9 +10,11 @@ myapp.use(express.static("frontend"));
 // Will be used when we implement our routing to show clinical trial data (JSON) response
 // myapp.use("/", mainRoutes); 
 
-myapp.use('/', (req, res) => {
-    res.send("Hello from the backend server.");
-});
+// myapp.use('/', (req, res) => {
+//     res.send("Hello from the backend server.");
+// });
+
+myapp.use("/api/", trialsRouter);
 
 myapp.listen(PORT, () => {
     console.log(`Server running on localhost:${PORT}`);
