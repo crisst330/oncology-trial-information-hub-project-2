@@ -12,10 +12,6 @@
 
 5. Import: data/trials.json
 
-6. Install dependencies:
+6. Install dependencies: npm install
 
-npm install
-
-7. Run application:
-
-npm start
+7. Run application: npm start
