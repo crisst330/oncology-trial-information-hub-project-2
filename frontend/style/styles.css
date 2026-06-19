@@ -10,6 +10,10 @@ html, body {
    min-height: 100%;
 }
 
+main {
+  padding-top: 90px;
+}
+
 .navbar-brand {
     font-size: 22px;
     font-weight: 800;
