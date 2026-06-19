@@ -1,3 +1,9 @@
+:root {
+    --teal: #008080;
+    --teal-dark: #045d5d;
+    --teal-light: #4fd1c5;
+}
+
 html, body {
    margin: 0;
    padding: 0;
@@ -6,44 +12,44 @@ html, body {
 
 .navbar-brand {
     font-size: 22px;
-    font-weight: 700;
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    color: var(--teal-dark);
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     float: left;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.15em;
 }
 
 .brand-prompt {
-    color: #ffffff;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 20px rgba
-    (255, 255, 255, 0.6);
+    color: var(--teal);
 }
 
 
 .navbar {
-    background: rgba(255, 257, 253, 0.13);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 246, 255, 0.27);
-    min-height: 80px;
-    margin: 20px;
-    border-radius: 16px;
+    background: #ffffff;
+    min-height: 72px;
+    margin: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 .navbar.navbar-shrink {
-    min-height: 60px;
-    margin: 10px 20px;
-    background: rgba(255, 255, 255, 0.35);
+    min-height: 56px;
 }
 
 .nav-link {
     font-size: 1.1rem;
-    font-family: Cinzel, raleway;
+    font-family: 'Open Sans', sans-serif;
+    color: #2d3748;
+}
+
+.nav-link:hover {
+    color: var(--teal-dark);
 }
 
 .navbar .navbar-nav .nav-link.active {
-    color: #003580;
+    color: var(--teal-dark);
     font-weight: bold;
 }
 
@@ -63,7 +69,7 @@ html, body {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: rgb(22, 137, 225);
+    background-color: var(--teal);
     visibility: hidden;
     transition: width 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
@@ -76,7 +82,7 @@ html, body {
 .hero-section {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
 }
 
@@ -90,49 +96,105 @@ html, body {
 }
 
 .hero-section .container {
-    height: 100vh;
+    min-height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 60px;
     z-index: 1;
     position: relative;
 }
 
-.hero-section .container h1 {
-    font-size: 1.5em;
+.hero-section .container h1,
+.hero-section .container h2 {
     color: white;
-    font-family: Cinzel, raleway;
-    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: normal;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-top: 20%;
+}
+
+.hero-section .container h1 {
+    font-size: 2.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
 .hero-section .container h2 {
-    font-size: 1.8rem;
-    color: white;
-    font-family: Cinzel, raleway;
-    font-weight: normal;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.08em;
     margin-top: 12px;
 }
 
-.hero-section .container h3 {
-    color: white;
-    font-family: Cinzel, raleway;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.card-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+    margin-top: 40px;
+    max-width: 1100px;
 }
 
-.hero-instructions p {
+.card-group > .card {
+    flex: 1 1 220px;
+    border: none;
+    border-top: 4px solid var(--teal);
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.card-step {
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--teal);
     color: white;
-    font-family: Cinzel, raleway;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 32px;
+    text-align: center;
+}
+
+.card-group > .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-group > .card.card-selected {
+    background-color: #e6f7f5;
+    border-top-color: var(--teal-dark);
+}
+
+.card-group > .card.card-selected::after {
+    content: "✓";
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    color: var(--teal-dark);
+    font-weight: bold;
+}
+
+.card-group .card-title {
+    color: var(--teal-dark);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+.card-group .card-text {
+    font-family: 'Open Sans', sans-serif;
+    color: #2d3748;
 }
 
 .site-footer {
-    background: rgba(0, 128, 128, 0.95);
+    background: var(--teal-dark);
     color: white;
     text-align: center;
     padding: 32px 16px;
-    font-family: Cinzel, raleway;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .footer-name {
@@ -147,15 +209,10 @@ html, body {
 }
 
 .footer-contact a {
-    color: rgb(22, 137, 225);
+    color: var(--teal-light);
     text-decoration: none;
 }
 
 .footer-contact a:hover {
     color: white;
-}
-
-.footer-divider {
-    margin: 0 12px;
-    opacity: 0.4;
 }

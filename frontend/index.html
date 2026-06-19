@@ -4,16 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Timothy Criss Jr, Priamos Koumas" />
-    <!-- Fill out content for the description of the homepage later -->
     <meta name="description" content="" />
     <title>Homepage</title>
-    <!-- Add href="./images/image-file-to-insert" later -->
-    <link rel="icon" href="./images/" type="image/png" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="style/styles.css" />
   </head>
@@ -21,12 +24,11 @@
     <!--This is a link to a YouTube video used for the index: 
 https://www.youtube.com/watch?v=h5apE3E72wY&list=PLj0z0WBaTiH7jOjO7C0w2lSeuuisoiSR9
 -->
-
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.html"><span class="brand-prompt"></span> 
-      OTIH</a>
+    <a class="navbar-brand" href="index.html"><span class="brand-prompt"></span>
+      O.T.I.H</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
     data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
     aria-label="Toggle navigation">
@@ -56,30 +58,60 @@ https://www.youtube.com/watch?v=h5apE3E72wY&list=PLj0z0WBaTiH7jOjO7C0w2lSeuuisoi
 <section class="hero-section">
   <img src="images/cancercommunity.jpg" alt="Cancer Community" 
   class="hero-bg-img">
-  <div class= "container d-flex flex-column align-items-center text-center 
-  justify-content-center fs-1">
+  <div class= "container d-flex flex-column align-items-center text-center
+  justify-content-center">
     <h1>Welcome to the Oncology Trial Information Hub</h1>
     <h2>Instructions for using the Oncology Trial Information Hub:</h2>
-    <div class="hero-instructions">
-      <h3>How to Use the Hub</h3>
-      <p>1. Navigate to the Search page to find clinical trials.</p>
-      <p>2. Click on a trial to view its details.</p>
-      <p>3. Save trials you're interested in using the "Save Trial" button.</p>
-      <p>4. View your saved trials on the Saved Trials page.</p>
+    <div class="card-group">
+  <div class="card">
+    <div class="card-body">
+      <span class="card-step">1</span>
+      <h5 class="card-title">Search Trials</h5>
+      <p class="card-text">
+        Locate oncology clinical trials using the search functionality on the Search page.
+      </p>
     </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <span class="card-step">2</span>
+      <h5 class="card-title">Browse Trials</h5>
+      <p class="card-text">
+        Have a look at the available oncology clinical trials on the Browse page.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <span class="card-step">3</span>
+      <h5 class="card-title">Save Trials</h5>
+      <p class="card-text">
+        Save and export your favorite oncology clinical trials for future reference, including the ability to share them with other researchers and/or add your own personal notes.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <span class="card-step">4</span>
+      <h5 class="card-title">Review Saved Trials</h5>
+      <p class="card-text">
+        Access your saved trials at any time and manage your list of bookmarked
+        oncology studies.
+      </p>
+    </div>
+  </div>
+</div>
   </div>
 </section>
 
   <footer class="site-footer">
     <div class="container">
-      <p class="footer-name">Contact Information</p>
+      <p class="footer-name">View the Project on GitHub</p>
       <div class="footer-contact">
-        <a href="mailto:priamoskoumas@gmail.com">priamoskoumas@gmail.com</a>
-        <span class="footer-divider">|</span>
-        <a href="tel:+15084939306">+1 (508) 493-9306</a>
-        <span class="footer-divider">|</span>
-        <a href="https://linkedin.com/in/priamos" target="_blank" rel="noopener 
-        noreferrer">LinkedIn</a>
+        <a href="https://github.com/crisst330/oncology-trial-information-hub-project-2" target="_blank" rel="noopener noreferrer">Click Here</a>
       </div>
     </div>
   </footer>
@@ -88,7 +120,7 @@ https://www.youtube.com/watch?v=h5apE3E72wY&list=PLj0z0WBaTiH7jOjO7C0w2lSeuuisoi
   integrity=
   "sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
   crossorigin="anonymous"></script>
-  <script src="js/main.js" type="module"></script>
+  <script src="js/homepage.js" type="module"></script>
 </body>
 </html>
 
