@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 3000;
 const myapp = express();
 
 myapp.use(express.static("frontend"));
+
 // Will be used when we implement our routing to show clinical trial data (JSON) response
 // myapp.use("/", mainRoutes); 
 
