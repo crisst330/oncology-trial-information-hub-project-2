@@ -52,19 +52,125 @@
         </div>
       </div>
     </nav>
-    <main>
-      <h1><bold>Search Trials Collection</bold></h1>
-      <header>
-        Will be used for implementing the Search feature using a search form
-        plus submit button
-      </header>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga dolor
-        eum, odio esse unde delectus eos expedita soluta libero aut in.
-        Veritatis reprehenderit reiciendis dolorem quam odio laborum sapiente!
-        Quae.
-      </p>
+    <!--- Main -->
+    <main class="search-page">
+      <section class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="card search-panel shadow-sm">
+              <div class="card-body">
+                <p class="text-uppercase small fw-bold search-label">
+                  Trial Catalog Search
+                </p>
+
+                <h1 class="card-title">Search Oncology Trial Records</h1>
+
+                <p class="card-text">
+                  Please select one or more filters below to search through the simulated oncology
+                  clinical trial records.
+                </p>
+
+                <form id="search-form" class="row g-3 mt-3">
+                  <div class="col-md-6">
+                    <label for="condition" class="form-label">
+                      Cancer Condition
+                    </label>
+                    <select id="condition" name="condition" class="form-select">
+                      <option value="">Any condition</option>
+                      <option value="Breast Cancer">Breast Cancer</option>
+                      <option value="Lung Cancer">Lung Cancer</option>
+                      <option value="Colon Cancer">Colon Cancer</option>
+                      <option value="Prostate Cancer">Prostate Cancer</option>
+                      <option value="Pancreatic Cancer">
+                        Pancreatic Cancer
+                      </option>
+                      <option value="Melanoma">Melanoma</option>
+                      <option value="Leukemia">Leukemia</option>
+                      <option value="Lymphoma">Lymphoma</option>
+                      <option value="Ovarian Cancer">Ovarian Cancer</option>
+                      <option value="Brain Cancer">Brain Cancer</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="location" class="form-label">Location</label>
+                    <select id="location" name="location" class="form-select">
+                      <option value="">Any location</option>
+                      <option value="Boston MA">Boston MA</option>
+                      <option value="New York NY">New York NY</option>
+                      <option value="Houston TX">Houston TX</option>
+                      <option value="Chicago IL">Chicago IL</option>
+                      <option value="Seattle WA">Seattle WA</option>
+                      <option value="Philadelphia PA">Philadelphia PA</option>
+                      <option value="Los Angeles CA">Los Angeles CA</option>
+                      <option value="San Francisco CA">San Francisco CA</option>
+                      <option value="Baltimore MD">Baltimore MD</option>
+                      <option value="Washington DC">Washington DC</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="phase" class="form-label">Phase</label>
+                    <select id="phase" name="phase" class="form-select">
+                      <option value="">Any phase</option>
+                      <option value="Phase 1">Phase 1</option>
+                      <option value="Phase 2">Phase 2</option>
+                      <option value="Phase 3">Phase 3</option>
+                      <option value="Phase 4">Phase 4</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="status" class="form-label">Status</label>
+                    <select id="status" name="status" class="form-select">
+                      <option value="">Any status</option>
+                      <option value="Recruiting">Recruiting</option>
+                      <option value="Completed">Completed</option>
+                      <option value="Active">Active</option>
+                      <option value="Not Recruiting">Not Recruiting</option>
+                      <option value="Terminated">Terminated</option>
+                      <option value="Suspended">Suspended</option>
+                      <option value="Withdrawn">Withdrawn</option>
+                      <option value="Enrollment Closed">
+                        Enrollment Closed
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="col-12 d-flex gap-2">
+                    <button type="submit" class="btn btn-primary">
+                      Search Trials
+                    </button>
+
+                    <button
+                      id="reset-button"
+                      type="button"
+                      class="btn btn-outline-secondary"
+                    >
+                      Reset
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <section class="mt-4">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <h2 class="h4 mb-0">Search Results</h2>
+                <p id="results-count" class="mb-0 text-muted">
+                  Select filters or search all trials.
+                </p>
+              </div>
+
+              <div id="results-container"></div>
+            </section>
+          </div>
+        </div>
+      </section>
     </main>
+    <script src="js/search.js" type="module"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
