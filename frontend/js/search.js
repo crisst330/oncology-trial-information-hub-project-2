@@ -5,6 +5,15 @@ console.log("Hello from search.js");
 function Search() {
     const me = {};
 
+    // Responsible for displaying trial results to the webpage
+    const renderTrials = (trials) => {
+        
+        // Retrieves the HTML containers where the results will be displayed
+        const resultsDiv = document.getElementById("results-container");
+        const resultsCount = document.getElementById("result");
+        
+
+    }
     return me;
 }
 
