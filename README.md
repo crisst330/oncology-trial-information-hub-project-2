@@ -31,32 +31,30 @@ AI assistance was used primarily for:
 * refining comments, documentation wording, and project descriptions for clarity and maintainability
 * providing conceptual guidance on repository structure and aligning implementation decisions with the course rubric and proposal requirements
 
-GenAI Tool Information
+### GenAI Tool Information
 
 * Tool Used: ChatGPT
 * Model Used: GPT-5.5
 * Provider: OpenAI
 
-Example Prompts Used
+## Example Prompts Used
 
-Search Feature Planning Prompt
+### Search Feature Planning Prompt
 
 Help me design a simple search interface for simulated oncology trial records that follows a three-tier client/server architecture and stays within course scope.
 
-Frontend Rendering Prompt
+### Frontend Rendering Prompt
 
 Explain how to implement client-side rendering using JavaScript and Bootstrap cards without server-side rendering.
 
-Architecture Prompt
+### Architecture Prompt
 
 Explain how routes, repository files, and MongoDB connect together using the MVC pattern.
 
-Debugging Prompt
+### Debugging Prompt
 
 Review my search implementation and explain integration issues between frontend, Express routes, and MongoDB.
 
-Documentation Prompt
+### Documentation Prompt
 
 Help summarize and document the purpose of each file and architectural decision for this project.
-
-This version stays accurate to what happened here: you still designed, implemented, selected, and integrated the code yourself; AI supported explanation, iteration, and debugging.
