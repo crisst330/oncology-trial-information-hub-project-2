@@ -1,4 +1,4 @@
-import { MongoClient } from "mongodb";
+import { MongoClient, ObjectId } from "mongodb";
 import process from "process";
 
 function MyNotesDB({
@@ -46,8 +46,40 @@ function MyNotesDB({
     }
   };
 
+
+me.updateNote = async (id, {title, notes: noteText, interestLevel} = {}) => {
+    const { client, notes } = await connect();
+    try {
+      const result = await notes.updateOne(
+        { _id: new ObjectId(id) },
+        { $set: { title, notes: noteText, interestLevel } }
+      );
+      console.log("Updated research note in MongoDB", result);
+      return result;
+    } catch (err) {
+      console.error("Error updating research note in MongoDB", err);
+      throw err;
+    } finally {
+      await client.close();
+    }
+  };
+
+me.deleteNote = async (id) => {
+    const { client, notes } = await connect();
+    try {
+      const result = await notes.deleteOne({ _id: new ObjectId(id) });
+      console.log("Deleted research note from MongoDB", result);
+      return result;
+    } catch (err) {
+      console.error("Error deleting research note from MongoDB", err);
+      throw err;
+    } finally {
+      await client.close();
+    }
+  };
   return me;
 }
+
 
 const myNotesDB = MyNotesDB(); 
 export default myNotesDB;

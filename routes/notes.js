@@ -25,4 +25,26 @@ router.post("/notes", async (req, res) => {
     }
 });
 
+router.put("/notes/:id", async (req, res) => {
+    console.log(`Received request to update note with id ${req.params.id} at /api/notes/${req.params.id}`);
+    try {
+        const result = await MyNotesDB.updateNote(req.params.id, req.body);
+        res.json({ result });
+    } catch (err) {
+        console.error("Error updating note", err);
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+router.delete("/notes/:id", async (req, res) => {
+    console.log(`Received request to delete note with id ${req.params.id} at /api/notes/${req.params.id}`);
+    try {
+        const result = await MyNotesDB.deleteNote(req.params.id);
+        res.json({ result });
+    } catch (err) {
+        console.error("Error deleting note", err);
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
 export default router;

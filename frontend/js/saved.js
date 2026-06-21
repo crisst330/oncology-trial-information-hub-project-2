@@ -12,7 +12,7 @@ function SavedTrials() {
 
     const renderNotes = (notes) => {
         const notesDiv = document.getElementById("notesList");
-        for (const {title, notes: noteText, interestLevel} of notes) {
+        for (const { _id, title, notes: noteText, interestLevel } of notes) {
             const card = document.createElement("div");
             card.className = "card trial-card mb-3";
             card.innerHTML = `
@@ -20,8 +20,22 @@ function SavedTrials() {
                     <h5 class="card-title">${title}</h5>
                     <p class="card-text">${noteText}</p>
                     <p class="card-text">Interest Level: ${interestLevel}</p>
+                    <button class="btn btn-primary edit-btn">Update</button>
+                    <button class="btn btn-danger delete-btn">Delete</button>
                 </div>
             `;
+            card.querySelector(".edit-btn").addEventListener("click", () => {
+                const updatedNote = prompt("Edit your note:", noteText);
+                if (updatedNote !== null) {
+                    me.updateNote(_id, {title, notes: updatedNote, interestLevel});
+                } 
+                
+            });
+            card.querySelector(".delete-btn").addEventListener("click", () => {
+                if (confirm("Are you sure you want to delete this note?")) {
+                    me.deleteNote(_id);
+                }
+            });
             notesDiv.appendChild(card);
         }
     };
@@ -74,6 +88,43 @@ function SavedTrials() {
         sendNote(event);
     });
 
+    me.deleteNote = async (id) => {
+        try {
+            const response = await fetch(`/api/notes/${id}`, {
+                method: "DELETE"
+            });
+            if (!response.ok) {
+                console.error("Failed to delete note.", response.status, response.statusText);
+                me.showError({msg: "Failed to delete note.", res: response});
+                return;
+            }
+            console.log("Note deleted successfully.");
+            me.refreshNotes();
+        } catch (e) {
+            console.error(e);
+        }
+    };
+    
+    me.updateNote = async (id, updatedNote) => {
+        try {
+            const response = await fetch(`/api/notes/${id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(updatedNote)
+            });
+            if (!response.ok) {
+                console.error("Failed to update note.", response.status, response.statusText);
+                me.showError({msg: "Failed to update note.", res: response});
+                return;
+            }
+            console.log("Note updated successfully.");
+            me.refreshNotes();
+        } catch (e) {
+            console.error(e);
+        }
+    };
     return me;
 }
 const mySavedTrials = SavedTrials();
