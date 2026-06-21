@@ -9,13 +9,6 @@ const myapp = express();
 myapp.use(express.static("frontend"));
 myapp.use(express.json());
 
-// Will be used when we implement our routing to show clinical trial data (JSON) response
-// myapp.use("/", mainRoutes); 
-
-// myapp.use('/', (req, res) => {
-//     res.send("Hello from the backend server.");
-// });
-
 myapp.use("/api/", trialsRouter);
 myapp.use("/api/", notesRoutes);
 

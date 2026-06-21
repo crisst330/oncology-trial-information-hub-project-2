@@ -3,13 +3,6 @@ import MyDB from "../db/myMongoDB.js";
 
 const router = express.Router();
 
-// Test route previously used to confirm backend connection.
-// Keeping it commented out in case we need to test the route again later.
-// router.get("/trials", (req, res) => {
-//   console.log("🏥 Received request for /api/trials");
-//   res.send("Testing code from the backend server (express), not the frontend.");
-// });
-
 // GET route for retrieving clinical trial records from MongoDB.
 router.get("/trials", async (req, res) => {
   console.log("🏥 Received request for /api/trials");
