@@ -1,4 +1,4 @@
-// MongoDB collection file for clinical trials 
+// MongoDB collection file for clinical trials
 import { MongoClient } from "mongodb";
 import process from "process";
 
