@@ -45,6 +45,48 @@ function MyNotesDB({
       await client.close();
     }
   };
+
+  me.getNotesByTitle = async (title) => {
+    const { client, notes } = await connect();
+    try {
+      const data = await notes.find({ title: { $regex: title, $options: "i" } }).toArray();
+      console.log("Fetched research notes by title from MongoDB", data);
+      return data;
+    } catch (err) {
+      console.error("Error fetching research notes by title from MongoDB", err);
+      throw err;
+    } finally {
+      await client.close();
+    }
+  };
+
+  me.getNotesByInterestLevel = async (interestLevel) => {
+    const { client, notes } = await connect();
+    try {
+      const data = await notes.find({ interestLevel: interestLevel }).toArray();
+      console.log("Fetched research notes by interest level from MongoDB", data);
+      return data;
+    } catch (err) {
+      console.error("Error fetching research notes by interest level from MongoDB", err);
+      throw err;
+    } finally {
+      await client.close();
+    }
+  };
+
+  me.getNotesbyNotesText = async (noteText) => {
+    const { client, notes } = await connect();
+    try {
+      const data = await notes.find({ notes: { $regex: noteText, $options: "i" } }).toArray();
+      console.log("Fetched research notes by note text from MongoDB", data);
+      return data;
+    } catch (err) {
+      console.error("Error fetching research notes by note text from MongoDB", err);
+      throw err;
+    } finally {
+      await client.close();
+    }
+  };
   
   me.createNote = async ({title, notes: noteText, interestLevel} = {}) => {
     const { client, notes } = await connect();
