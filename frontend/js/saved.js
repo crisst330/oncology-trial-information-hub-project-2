@@ -57,7 +57,7 @@ function SavedTrials() {
     //https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Sending_forms_through_JavaScript
     //Source used
     const form = document.getElementById("noteForm");
-    async function sendNote(event) {
+    async function sendNote() {
         const note = {
             title: document.getElementById("noteTitle").value,
             notes: document.getElementById("noteText").value,
@@ -85,7 +85,7 @@ function SavedTrials() {
     }
     form.addEventListener("submit", event => {
         event.preventDefault();
-        sendNote(event);
+        sendNote();
     });
 
     me.deleteNote = async (id) => {

@@ -31,6 +31,20 @@ function MyNotesDB({
         await client.close();
     }
   };
+
+  me.getNoteById = async (id) => {
+    const { client, notes } = await connect();
+    try {
+      const note = await notes.findOne({ _id: new ObjectId(id) });
+      console.log("Fetched research note by ID from MongoDB", note);
+      return note;
+    } catch (err) {
+      console.error("Error fetching research note by ID from MongoDB", err);
+      throw err;
+    } finally {
+      await client.close();
+    }
+  };
   
   me.createNote = async ({title, notes: noteText, interestLevel} = {}) => {
     const { client, notes } = await connect();
