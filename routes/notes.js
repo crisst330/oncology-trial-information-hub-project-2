@@ -14,6 +14,21 @@ router.get("/notes", async (req, res) => {
     }
 });
 
+router.get("/notes/:id", async (req, res) => {
+    console.log(`Received request for note with id ${req.params.id} at /api/notes/${req.params.id}`);
+    try {
+        const note = await MyNotesDB.getNoteById(req.params.id);
+        if (note) {
+            res.json(note);
+        } else {
+            res.status(404).json({ error: "Note not found" });
+        }
+    } catch (err) {
+        console.error("Error fetching notes", err);
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
 router.post("/notes", async (req, res) => {
     console.log("Received request to create a new note at /api/notes");
     try {
