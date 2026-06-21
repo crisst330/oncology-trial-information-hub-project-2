@@ -59,7 +59,7 @@ function MyNotesDB({
       await client.close();
     }
   };
-
+  
   me.getNotesByInterestLevel = async (interestLevel) => {
     const { client, notes } = await connect();
     try {
@@ -102,7 +102,6 @@ function MyNotesDB({
     }
   };
 
-
 me.updateNote = async (id, {title, notes: noteText, interestLevel} = {}) => {
     const { client, notes } = await connect();
     try {
@@ -135,7 +134,6 @@ me.deleteNote = async (id) => {
   };
   return me;
 }
-
 
 const myNotesDB = MyNotesDB(); 
 export default myNotesDB;
