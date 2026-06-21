@@ -9998,5 +9998,15 @@
     "title": "Gastric Cancer Phase 4 Clinical Trial",
     "summary": "This study evaluates Gastric Cancer treatment outcomes during Phase 4.",
     "trialId": 1000
+  },
+  {
+    "condition": "Breast Cancer",
+    "phase": "Phase 2",
+    "status": "Recruiting",
+    "location": "Boston MA",
+    "sponsor": "Oncology Research Group",
+    "title": "Breast Cancer Phase 2 Clinical Trial",
+    "summary": "This study evaluates Breast Cancer treatment outcomes during Phase 2.",
+    "trialId": 1001
   }
 ]
