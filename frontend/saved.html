@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Timothy Criss Jr, Priamos Koumas" />
+    <title>Saved Trials</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/styles.css" />
+  </head>
+  <body>
+    <!--This is a link to a YouTube video used for the index:
+        https://www.youtube.com/watch?v=h5apE3E72wY&list=PLj0z0WBaTiH7jOjO7C0w2lSeuuisoiSR9
+        -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <span class="brand-prompt"></span>O.T.I.H
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="search.html">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="saved.html"
+                >Saved Trials</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="search-page">
+      <section class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="card search-panel shadow-sm">
+              <div class="card-body">
+                <h1 class="card-title">Save a Trial Note</h1>
+
+                <p class="card-text">
+                  Keep track of trials you are interested in by saving a title, your
+                  notes, and your level of interest below.
+                </p>
+
+                <form id="noteForm" class="row g-3 mt-3">
+                  <div class="col-md-6">
+                    <label for="noteTitle" class="form-label">Title</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="noteTitle"
+                      placeholder="Enter trial title"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="interestLevel" class="form-label">
+                      Level of Interest
+                    </label>
+                    <select
+                      class="form-select"
+                      id="interestLevel"
+                      aria-label="Level of Interest"
+                    >
+                      <option value="" disabled selected>
+                        Select Level of Interest
+                      </option>
+                      <option value="high" selected>High</option>
+                      <option value="medium">Medium</option>
+                      <option value="low">Low</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="noteText" class="form-label">Notes</label>
+                    <textarea
+                      class="form-control"
+                      id="noteText"
+                      rows="3"
+                    ></textarea>
+                  </div>
+
+                  <div class="col-12 d-flex gap-2">
+                    <button type="submit" class="btn btn-primary">
+                      Save Note
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <section class="mt-4">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <h2 class="h4 mb-0">Saved Notes</h2>
+                <p id="notes-count" class="mb-0 text-muted">
+                  Your saved trial notes will appear here.
+                </p>
+              </div>
+
+              <div id="notesList"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p class="footer-name">Check out our Github!</p>
+        <div class="footer-contact">
+            <a
+            href="https://github.com/crisst330/oncology-trial-information-hub-project-2"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Click Here</a
+            >
+        </div>
+      </div>
+      <h5>
+        &copy; <bold>Timothy Criss Jr & Priamos Koumas. Summer 2026.</bold>
+      </h5>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/saved.js" type="module"></script>
+  </body>
+</html>
