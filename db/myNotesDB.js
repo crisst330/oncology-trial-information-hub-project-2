@@ -16,19 +16,26 @@ function MyNotesDB({
     const notes = client.db(dbName).collection(collectionName);
 
     return { client, notes };
-  }; 
+  };
 
-    me.getNotes = async ({query = {}, pageSize = 20, page = 0} = {}) => {
+  me.getNotes = async ({ query = {}, pageSize = 20, page = 0 } = {}) => {
     const { client, notes } = await connect();
     try {
-        const data = await notes.find(query).limit(pageSize).skip(page * pageSize).toArray();
-        console.log("Fetched research notes collection data from MongoDB", data);
-        return data;
+      const data = await notes
+        .find(query)
+        .limit(pageSize)
+        .skip(page * pageSize)
+        .toArray();
+      console.log("Fetched research notes collection data from MongoDB", data);
+      return data;
     } catch (err) {
-        console.error("Error fetching research notes collection from MongoDB", err);
-        throw err;
+      console.error(
+        "Error fetching research notes collection from MongoDB",
+        err,
+      );
+      throw err;
     } finally {
-        await client.close();
+      await client.close();
     }
   };
 
@@ -49,7 +56,9 @@ function MyNotesDB({
   me.getNotesByTitle = async (title) => {
     const { client, notes } = await connect();
     try {
-      const data = await notes.find({ title: { $regex: title, $options: "i" } }).toArray();
+      const data = await notes
+        .find({ title: { $regex: title, $options: "i" } })
+        .toArray();
       console.log("Fetched research notes by title from MongoDB", data);
       return data;
     } catch (err) {
@@ -59,15 +68,21 @@ function MyNotesDB({
       await client.close();
     }
   };
-  
+
   me.getNotesByInterestLevel = async (interestLevel) => {
     const { client, notes } = await connect();
     try {
       const data = await notes.find({ interestLevel: interestLevel }).toArray();
-      console.log("Fetched research notes by interest level from MongoDB", data);
+      console.log(
+        "Fetched research notes by interest level from MongoDB",
+        data,
+      );
       return data;
     } catch (err) {
-      console.error("Error fetching research notes by interest level from MongoDB", err);
+      console.error(
+        "Error fetching research notes by interest level from MongoDB",
+        err,
+      );
       throw err;
     } finally {
       await client.close();
@@ -77,21 +92,30 @@ function MyNotesDB({
   me.getNotesbyNotesText = async (noteText) => {
     const { client, notes } = await connect();
     try {
-      const data = await notes.find({ notes: { $regex: noteText, $options: "i" } }).toArray();
+      const data = await notes
+        .find({ notes: { $regex: noteText, $options: "i" } })
+        .toArray();
       console.log("Fetched research notes by note text from MongoDB", data);
       return data;
     } catch (err) {
-      console.error("Error fetching research notes by note text from MongoDB", err);
+      console.error(
+        "Error fetching research notes by note text from MongoDB",
+        err,
+      );
       throw err;
     } finally {
       await client.close();
     }
   };
-  
-  me.createNote = async ({title, notes: noteText, interestLevel} = {}) => {
+
+  me.createNote = async ({ title, notes: noteText, interestLevel } = {}) => {
     const { client, notes } = await connect();
     try {
-      const result = await notes.insertOne({ title, notes: noteText, interestLevel });
+      const result = await notes.insertOne({
+        title,
+        notes: noteText,
+        interestLevel,
+      });
       console.log("Created new research note in MongoDB", result);
       return result;
     } catch (err) {
@@ -102,12 +126,15 @@ function MyNotesDB({
     }
   };
 
-me.updateNote = async (id, {title, notes: noteText, interestLevel} = {}) => {
+  me.updateNote = async (
+    id,
+    { title, notes: noteText, interestLevel } = {},
+  ) => {
     const { client, notes } = await connect();
     try {
       const result = await notes.updateOne(
         { _id: new ObjectId(id) },
-        { $set: { title, notes: noteText, interestLevel } }
+        { $set: { title, notes: noteText, interestLevel } },
       );
       console.log("Updated research note in MongoDB", result);
       return result;
@@ -119,7 +146,7 @@ me.updateNote = async (id, {title, notes: noteText, interestLevel} = {}) => {
     }
   };
 
-me.deleteNote = async (id) => {
+  me.deleteNote = async (id) => {
     const { client, notes } = await connect();
     try {
       const result = await notes.deleteOne({ _id: new ObjectId(id) });
@@ -135,5 +162,5 @@ me.deleteNote = async (id) => {
   return me;
 }
 
-const myNotesDB = MyNotesDB(); 
+const myNotesDB = MyNotesDB();
 export default myNotesDB;

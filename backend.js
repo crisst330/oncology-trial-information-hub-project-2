@@ -1,5 +1,5 @@
-import express from 'express';
-import process from 'process';
+import express from "express";
+import process from "process";
 import trialsRouter from "./routes/trials.js";
 import notesRoutes from "./routes/notes.js";
 
@@ -14,5 +14,5 @@ myapp.use("/api/", trialsRouter);
 myapp.use("/api/", notesRoutes);
 
 myapp.listen(PORT, () => {
-    console.log(`Server running on localhost:${PORT}`);
+  console.log(`Server running on localhost:${PORT}`);
 });

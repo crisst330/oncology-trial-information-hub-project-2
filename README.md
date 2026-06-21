@@ -1,5 +1,12 @@
 # oncology-trial-information-hub-project-2
 
+
+## How to use the web application
+
+## How to use "Saved Trials"
+
+## How to use "Search Trials"
+
 ## How to run mongodb collection (local setup)
 
 1. Start MongoDB locally.
