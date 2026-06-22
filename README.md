@@ -17,7 +17,6 @@ This project was developed as part of CS 5610 Web Development at Northeastern Un
 
 ## Screenshot / Thumbnail
 
-![Thumbnail](./frontend/images/thumbnail-project2-cs5610.png)
 ![URL](https://raw.githubusercontent.com/crisst330/oncology-trial-information-hub-project-2/main/frontend/images/thumbnail-project2-cs5610.png)
 
 ---
