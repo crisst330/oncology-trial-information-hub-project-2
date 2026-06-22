@@ -17,19 +17,19 @@ This project was developed as part of CS 5610 Web Development at Northeastern Un
 
 ## Screenshot / Thumbnail
 
-https://raw.githubusercontent.com/crisst330/oncology-trial-information-hub-project-2/main/frontend/images/thumbnail-project2-cs5610.png
+![Thumbnail](./frontend/images/thumbnail-project2-cs5610.png)
 
 ---
 
 ## O.T.I.H Demo Preview
-(./frontend/images/project-2-oncology-trial-information-hub-ezgif.com-video-to-gif-converter.gif)
+
+![O.T.I.H Demo](./frontend/images/project-2-oncology-trial-information-hub-ezgif.com-video-to-gif-converter.gif)
 
 ---
 
 ## Google Slides
 
-(https://docs.google.com/presentation/d/1wryO1SExtAQJVouA0PnMZT1h5cG3DrpA9B0AhTrzYsM/edit?usp=sharing)
-
+https://docs.google.com/presentation/d/1wryO1SExtAQJVouA0PnMZT1h5cG3DrpA9B0AhTrzYsM/edit?usp=sharing
 ---
 
 ## Live Video Demo
