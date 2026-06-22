@@ -21,8 +21,8 @@ https://raw.githubusercontent.com/crisst330/oncology-trial-information-hub-proje
 
 ---
 
-## Demo Preview
-frontend/images/project-2-oncology-trial-information-hub-ezgif.com-video-to-gif-converter.gif
+## O.T.I.H Demo Preview
+(./frontend/images/project-2-oncology-trial-information-hub-ezgif.com-video-to-gif-converter.gif)
 
 ---
 
