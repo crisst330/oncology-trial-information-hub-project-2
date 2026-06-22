@@ -14,5 +14,5 @@ myapp.use("/api/", trialsRouter);
 myapp.use("/api/", notesRoutes);
 
 myapp.listen(PORT, () => {
-  console.log(`Server running on localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
