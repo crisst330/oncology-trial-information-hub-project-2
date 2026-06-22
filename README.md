@@ -196,13 +196,8 @@ All notes are stored in the researchNotes MongoDB collection and persist across 
 3. Create database: clinicalTrials
 4. Create collection: trials
 5. Import: frontend/data/trials.json
-6. Install dependencies:
-
-npm install
-
-7. Run application:
-
-npm start
+6. Install dependencies: npm install
+7. Run application: npm start
 
 The Saved Trials feature uses a second collection called researchNotes in the same MongoDB database. This collection is automatically populated through the application and does not require importing any data.
 
