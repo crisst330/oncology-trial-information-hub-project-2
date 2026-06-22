@@ -12,24 +12,17 @@ async function importTrials() {
 
     const db = client.db("clinicalTrials");
 
-    const trials =
-      JSON.parse(
-        fs.readFileSync(
-          "./frontend/data/trials.json",
-          "utf8"
-        )
-      );
+    const trials = JSON.parse(
+      fs.readFileSync("./frontend/data/trials.json", "utf8"),
+    );
 
-    const collection =
-      db.collection("trials");
+    const collection = db.collection("trials");
 
     await collection.deleteMany({});
 
     await collection.insertMany(trials);
 
-    console.log(
-      `Imported ${trials.length} records`
-    );
+    console.log(`Imported ${trials.length} records`);
   } finally {
     await client.close();
   }

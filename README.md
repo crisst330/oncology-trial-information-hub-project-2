@@ -18,6 +18,7 @@ This project was developed as part of CS 5610 Web Development at Northeastern Un
 ## Screenshot / Thumbnail
 
 ![Thumbnail](./frontend/images/thumbnail-project2-cs5610.png)
+![URL](https://raw.githubusercontent.com/crisst330/oncology-trial-information-hub-project-2/main/frontend/images/thumbnail-project2-cs5610.png)
 
 ---
 
@@ -35,6 +36,11 @@ https://docs.google.com/presentation/d/1wryO1SExtAQJVouA0PnMZT1h5cG3DrpA9B0AhTrz
 ## Live Video Demo
 
 Add live demonstration link here.
+
+---
+
+## Live Application
+Production Deployment (Railway): https://oncology-trial-information-hub-project-2-production.up.railway.app/index.html
 
 ---
 
@@ -89,8 +95,8 @@ Allows users to create, update, and delete personal research notes associated wi
 
 ### Database
 
-- MongoDB
-- MongoDB Compass
+- MongoDB Atlas
+- MongoDB Node.js Driver
 
 ### Development Tools
 
@@ -123,6 +129,32 @@ Frontend → Express Routes → Database Layer → MongoDB
 
 ---
 
+### Deployment & Cloud Hosting
+## Production Deployment
+- The application was deployed using Railway for hosting and MongoDB Atlas for cloud database storage.
+
+- Deployment architecture: Frontend (static assets) → Express.js Backend → MongoDB Atlas
+
+### Deployment Configuration
+- Environment variables were used to prevent exposing sensitive credentials in source code.
+- Required environment variable: MONGODB_URI=<MongoDB Atlas connection string>
+- The application reads deployment configuration through environment variables rather than hardcoded credentials.
+
+### Database Initialization
+- Because MongoDB Compass experienced TLS/connection issues during development and deployment testing, a scripted database import approach was implemented.
+
+A custom import utility (scripts/importTrials.js) was created to automate loading the oncology trial dataset into MongoDB Atlas.
+
+### Import process:
+1. Connect to MongoDB Atlas using environment variables
+2. Read frontend/data/trials.json
+3. Insert records into the trials collection
+4. Initialize production data automatically
+
+This approach eliminated manual Compass imports and supported reproducible deployment setup using Railway.
+
+---
+
 ## Project Structure
 
 ```text
@@ -149,6 +181,8 @@ oncology-trial-information-hub-project-2/
 ├── routes/
 │   ├── notes.js
 │   └── trials.js
+├── scripts/
+│   └── importTrials.js
 ├── .gitignore
 ├── CS 5610 Project 2 Design Document.pdf
 ├── LICENSE
@@ -158,12 +192,6 @@ oncology-trial-information-hub-project-2/
 ├── package-lock.json
 └── package.json
 ```
----
-
-## Important Files
-
-(file descriptions here)
-
 ---
 
 ## How to Use the Web Application
@@ -189,17 +217,61 @@ All notes are stored in the researchNotes MongoDB collection and persist across 
 
 ---
 
-## How to Run MongoDB Collection (Local Setup)
+### How to Run the Application (Local Development)
 
-1. Start MongoDB locally.
-2. Open MongoDB Compass.
-3. Create database: clinicalTrials
-4. Create collection: trials
-5. Import: frontend/data/trials.json
-6. Install dependencies: npm install
-7. Run application: npm start
+Prerequisites
 
-The Saved Trials feature uses a second collection called researchNotes in the same MongoDB database. This collection is automatically populated through the application and does not require importing any data.
+* Node.js installed
+* MongoDB Atlas cluster configured
+* MongoDB database user created
+* Environment variable configured
+
+Local Setup
+
+1. Clone the repository:
+
+git clone <repository-url>
+cd oncology-trial-information-hub-project-2
+
+2. Install dependencies: npm install
+
+3. Create a .env file in the project root.
+
+Add: MONGODB_URI=<your MongoDB Atlas connection string>
+
+4. Import the oncology trial dataset into MongoDB Atlas.
+
+Run: node --env-file=.env scripts/importTrials.js
+
+This script:
+
+* connects to MongoDB Atlas
+* creates the clinicalTrials database if needed
+* populates the trials collection from frontend/data/trials.json
+
+5. Start the application: npm start
+
+6. Open: http://localhost:3000
+
+## Notes:
+* Trial search data is stored in the trials collection.
+* User-created notes are stored in the researchNotes collection.
+* The researchNotes collection is created automatically during application use and does not require manual import.
+
+⸻
+
+### Production Deployment (Railway)
+
+The production deployment uses:
+
+- Railway (application hosting)
+- MongoDB Atlas (cloud database)
+
+Required deployment variable: MONGODB_URI=<your MongoDB Atlas connection string>
+
+After deployment, initialize the database by running: node scripts/importTrials.js
+
+inside the deployment environment or locally before connecting production to Atlas.
 
 ---
 
@@ -266,20 +338,33 @@ https://johnguerra.co/lectures/webDevelopment_fall2025/04_Bootstrap/#/4/6/8
 
 #### GenAI Usage
 
-AI assistance for the Search Trials feature was used for:
+AI assistance for the Search Trials feature and deployment workflow was used for:
 
 - brainstorming and refining the Search page layout and overall user experience
-- discussing frontend design decisions using Bootstrap components and responsive layout concepts
-- explaining three-tier client/server architecture concepts and request/response flow
+- discussing frontend design decisions using Bootstrap components and responsive layout concepts- explaining three-tier client/server architecture concepts and request/response flow
 - clarifying MVC responsibilities across routes, repository logic, MongoDB access, and client-side rendering
 - reviewing JavaScript event handling and DOM manipulation concepts for frontend interactivity
 - discussing implementation approaches for search form submission using dropdown filtering and HTTP GET requests
 - explaining how frontend form selections connect to Express routes and MongoDB queries
-- helping organize and structure simulated oncology trial datasets for proof-of-concept testing
+- helping organize and structure simulated oncology clinical trial datasets for proof-of-concept testing
 - assisting with debugging frontend/backend integration and data rendering behavior
 - refining comments, documentation wording, and project descriptions for readability and maintainability
 - providing conceptual guidance on repository structure and file responsibilities within the application
 - explaining Bootstrap layout patterns and reusable UI component decisions
+
+Additional deployment and database integration assistance included:
+
+- explaining secure credential handling using environment variables and .gitignore
+- discussing approaches to prevent exposing MongoDB usernames and passwords in source control
+- helping diagnose MongoDB Atlas and MongoDB Compass connection issues during development
+- explaining cloud-hosted MongoDB Atlas configuration and Node.js connection patterns
+- generating and explaining a scripted data import approach using importTrials.js
+- discussing how deployment platforms inject environment variables at runtime
+- helping configure Railway deployment settings and application startup behavior
+- assisting with production deployment troubleshooting and backend hosting configuration
+- reviewing updates to README documentation to reflect final architecture and deployment decisions (from Render -> Railway)
+
+Generated suggestions were reviewed, adapted, and manually implemented into the final project.
 
 #### GenAI Tool Information
 
@@ -341,11 +426,19 @@ GitHub Copilot was used to:
 
 - “Help me design a simple but useful search interface for simulated oncology clinical trial records that follows a three-tier client/server architecture and uses client-side rendering instead of server-side rendering.”
 - “Explain how routes, frontend JavaScript, MongoDB queries, and repository files connect together in an MVC application and describe the responsibility of each layer.”
-- “Help me simplify the implementation of a search feature using the proposed dropdown filters I designed, shared, and mentioned in this thread and HTTP GET requests without introducing concepts that were not taught in class.”
+- “Help me simplify the implementation of a search feature using the proposed dropdown filters I designed and HTTP GET requests without introducing concepts that were not taught in class.”
 - “Review my Search page structure and suggest Bootstrap layout improvements while keeping the implementation appropriate for an introductory full-stack web development course.”
 - “Explain JavaScript event handling and DOM manipulation step by step while helping me understand how form submission and rendering work.”
-- “Help me debug frontend and backend integration issues and explain how data flows from Express routes into client-side rendered Bootstrap cards.”
+- “Help me debug frontend/backend integration issues and explain how data flows from Express routes into client-side rendered Bootstrap cards.”
 - “Review my repository structure and help ensure my Search feature aligns with the project proposal and rubric requirements.”
+- “Help me configure MongoDB Atlas for this project while keeping database credentials out of source control.”
+- “Explain how to connect a Node.js Express application to MongoDB Atlas using environment variables.”
+- “Help me troubleshoot MongoDB Atlas and MongoDB Compass connection issues and propose an alternative approach if necessary.”
+- “Help me create a reusable script to import local JSON clinical trial data into MongoDB Atlas using the MongoDB Node.js driver.”
+- “Explain how deployment platforms inject environment variables and how to adapt my application for production.”
+- “Help me deploy this full-stack Express and MongoDB application using Railway while preserving the existing project structure.”
+- “Review my deployment configuration and explain how to make my application work consistently between local and hosted environments.”
+- “Help me update my README documentation to accurately reflect the final architecture, deployment decisions, and database setup.”
 
 ### Student 2 — Priamos Koumas (Saved Trials)
 
