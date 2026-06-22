@@ -292,7 +292,8 @@ AI assistance for the Saved Trials (researchNotes CRUD) feature was used for:
 - Verified and kept pages visually consistent using a shared teal/medical color theme and matching Bootstrap card components
 - Suggested core MongoDB Node.js driver operations including ObjectId, updateOne with $set, and deleteOne for CRUD against the researchNotes collection
 - Recommended frontend patterns covering form submission, fetch CRUD, and DOM rendering
-
+- Recommended a CSS hover lift effect for the homepage instruction cards using transform and transition
+  
 #### GenAI Tool Information
 
 ##### Tool 1
@@ -340,6 +341,7 @@ GitHub Copilot was used to:
 - "How do I handle a form submit event and send data to an Express backend via fetch?"
 - "When is ObjectId required versus when can I filter by other fields in MongoDB?"
 - "How do I align frontend collection and field names with a submitted team proposal?"
+- "What is a unique feature to have with the Bootstrap cards on the homepage using CSS, and how should I go about implementing it?"
 
 ---
 
