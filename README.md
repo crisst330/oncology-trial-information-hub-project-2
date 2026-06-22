@@ -326,7 +326,13 @@ GitHub Copilot was used to:
 
 ### Student 1 — Timothy Criss Jr. (Search Trials)
 
-(Tim's prompts to be added)
+- “Help me design a simple but useful search interface for simulated oncology clinical trial records that follows a three-tier client/server architecture and uses client-side rendering instead of server-side rendering.”
+- “Explain how routes, frontend JavaScript, MongoDB queries, and repository files connect together in an MVC application and describe the responsibility of each layer.”
+- “Help me simplify the implementation of a search feature using the proposed dropdown filters I designed, shared, and mentioned in this thread and HTTP GET requests without introducing concepts that were not taught in class.”
+- “Review my Search page structure and suggest Bootstrap layout improvements while keeping the implementation appropriate for an introductory full-stack web development course.”
+- “Explain JavaScript event handling and DOM manipulation step by step while helping me understand how form submission and rendering work.”
+- “Help me debug frontend and backend integration issues and explain how data flows from Express routes into client-side rendered Bootstrap cards.”
+- “Review my repository structure and help ensure my Search feature aligns with the project proposal and rubric requirements.”
 
 ### Student 2 — Priamos Koumas (Saved Trials)
 
