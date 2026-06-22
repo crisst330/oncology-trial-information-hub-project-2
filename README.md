@@ -365,8 +365,30 @@ GitHub Copilot was used to:
   https://medium.com/@kanishkaekanayaka/mongodb-object-id-275984d335fc
 - Express.js — Routing Guide
   https://expressjs.com/en/guide/routing/
-- Bootstrap Documentation
+- Bootstrap 5 Documentation
   https://getbootstrap.com/docs/5.3/
+- Bootstrap 5 Getting Started
+  https://getbootstrap.com/docs/5.3/getting-started/introduction/
+- Bootstrap 5 Cards Component
+  https://getbootstrap.com/docs/5.3/components/card/
+- Bootstrap 5 Forms
+  https://getbootstrap.com/docs/5.3/forms/overview/
+- Bootstrap 5 Forms — Select
+  https://getbootstrap.com/docs/5.3/forms/select/
+- Bootstrap 5 Buttons Component
+  https://getbootstrap.com/docs/5.3/components/buttons/
+- Bootstrap 5 Navbar Component
+  https://getbootstrap.com/docs/5.3/components/navbar/
+- Bootstrap 5 Alerts Component
+  https://getbootstrap.com/docs/5.3/components/alerts/
+- Bootstrap 5 Tutorial — Ziad El Khoury Hanna (YouTube)
+  https://www.youtube.com/watch?v=h5apE3E72wY
+- YouTube Tutorial — CSS Hover Effects
+  https://www.youtube.com/watch?v=GbFAsMZJLOs&t=282s
+- YouTube Tutorial — Underline Hover Effect
+  https://www.youtube.com/watch?v=wh1FKjZt_H8
+- Stack Overflow — Underline on Hover in Navbar
+  https://stackoverflow.com/questions/37195863/how-do-i-create-an-underline-when-i-hover-over-links-in-nav-bar
 - Professor John Guerra — Node/Express/MongoDB Reference Repository
   https://github.com/john-guerra/nodeExpressMongoES6_apartmentListingsOrganizer
 - CS 5610 Course Lectures
