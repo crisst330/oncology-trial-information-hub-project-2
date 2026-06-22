@@ -125,6 +125,7 @@ Frontend → Express Routes → Database Layer → MongoDB
 
 ## Project Structure
 
+```text
 oncology-trial-information-hub-project-2/
 ├── db/
 │   ├── myMongoDB.js
@@ -134,7 +135,8 @@ oncology-trial-information-hub-project-2/
 │   │   └── trials.json
 │   ├── images/
 │   │   ├── cancercommunity.jpg
-│   │   └── icon.png
+│   │   ├── icon.png
+│   │   └── project-2-oncology-trial-information-hub-ezgif.com-video-to-gif-converter.gif
 │   ├── js/
 │   │   ├── homepage.js
 │   │   ├── saved.js
@@ -144,7 +146,6 @@ oncology-trial-information-hub-project-2/
 │   ├── index.html
 │   ├── saved.html
 │   └── search.html
-├── node_modules/
 ├── routes/
 │   ├── notes.js
 │   └── trials.js
@@ -156,7 +157,7 @@ oncology-trial-information-hub-project-2/
 ├── eslint.config.js
 ├── package-lock.json
 └── package.json
-
+```
 ---
 
 ## Important Files
