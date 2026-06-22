@@ -21,9 +21,14 @@ https://raw.githubusercontent.com/crisst330/oncology-trial-information-hub-proje
 
 ---
 
+## Demo Preview
+frontend/images/project-2-oncology-trial-information-hub-ezgif.com-video-to-gif-converter.gif
+
+---
+
 ## Google Slides
 
-Add presentation link here.
+(https://docs.google.com/presentation/d/1wryO1SExtAQJVouA0PnMZT1h5cG3DrpA9B0AhTrzYsM/edit?usp=sharing)
 
 ---
 
@@ -255,18 +260,20 @@ https://johnguerra.co/lectures/webDevelopment_fall2025/04_Bootstrap/#/4/6/8
 
 #### GenAI Usage
 
-AI assistance was used primarily for:
+AI assistance for the Search Trials feature was used for:
 
-- brainstorming and refining the search page layout and user experience for the Trial Catalog feature
-- discussing frontend design choices using Bootstrap components and responsive layout concepts
-- explaining three-tier client/server architecture concepts
-- clarifying MVC responsibilities between routes, repository logic, and client-side rendering
-- reviewing JavaScript event handling and DOM manipulation concepts
-- discussing search form implementation approaches using dropdown filtering and HTTP GET requests
-- helping explain MongoDB query flow and mock dataset organization
-- assisting with debugging frontend/backend integration issues
-- refining documentation wording and project descriptions
-- providing conceptual guidance on repository structure
+- brainstorming and refining the Search page layout and overall user experience
+- discussing frontend design decisions using Bootstrap components and responsive layout concepts
+- explaining three-tier client/server architecture concepts and request/response flow
+- clarifying MVC responsibilities across routes, repository logic, MongoDB access, and client-side rendering
+- reviewing JavaScript event handling and DOM manipulation concepts for frontend interactivity
+- discussing implementation approaches for search form submission using dropdown filtering and HTTP GET requests
+- explaining how frontend form selections connect to Express routes and MongoDB queries
+- helping organize and structure simulated oncology trial datasets for proof-of-concept testing
+- assisting with debugging frontend/backend integration and data rendering behavior
+- refining comments, documentation wording, and project descriptions for readability and maintainability
+- providing conceptual guidance on repository structure and file responsibilities within the application
+- explaining Bootstrap layout patterns and reusable UI component decisions
 
 #### GenAI Tool Information
 
