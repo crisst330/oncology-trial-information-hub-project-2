@@ -220,6 +220,10 @@ Implemented:
 - Search result rendering
 - Clinical trial dataset integration
 
+Endpoints (express routes):
+- GET /api/trials
+- GET /api/trials?condition=&phase=&status=&location=
+
 ### Student 2 — Priamos Koumas
 
 Implemented:
@@ -230,6 +234,12 @@ Implemented:
 - MongoDB integration for research notes
 - Update and Delete functionality
 
+Endpoints (express routes):
+- GET /api/notes
+- GET /api/notes/:id
+- POST /api/notes
+- PUT /api/notes/:id
+- DELETE /api/notes/:id
 ---
 
 ## Authors
