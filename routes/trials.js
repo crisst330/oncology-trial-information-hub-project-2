@@ -33,11 +33,13 @@ router.get("/trials", async (req, res) => {
     }
 
     // Calls the MongoDB helper file and passes in the query object.
-    const trials = await MyDB.getTrials({
-      query,
-      pageSize: 50,
-      page: 0,
-    });
+    const page = Math.max(parseInt(req.query.page, 10) || 0, 0);
+    const pageSize = Math.min(Math.max(parseInt(req.query.pageSize, 10) || 50, 1), 100);
+
+    const trials = await MyDB.getTrials({ query, page, pageSize });
+
+    // Sends the data back to the frontend as JSON, with pagination info.
+    res.json({ trials, page, pageSize });
 
     // Sends the data back to the frontend as JSON.
     res.json({
