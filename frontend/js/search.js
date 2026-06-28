@@ -101,6 +101,9 @@ function Search() {
     // Fetches backend data from the Express route.
     const res = await fetch(url);
 
+    // REVIEW: there's no res.ok check here, so if the server returns an error the
+    // code still tries to render and the user sees nothing/an empty page. saved.js
+    // handles this nicely with its res.ok + showError pattern; worth copying that.
     // Converts the JSON response into a JavaScript object.
     const data = await res.json();
 
