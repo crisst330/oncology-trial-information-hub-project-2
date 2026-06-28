@@ -5,6 +5,9 @@ function SavedTrials() {
     const main = document.querySelector("main");
     const alert = document.createElement("div");
     alert.className = `alert alert-${type}`;
+    // REVIEW: this sets role="danger", which isn't a valid ARIA role, so screen
+    // readers won't announce the alert. The color belongs in the class (already
+    // handled above), and the role should just be "alert" -> alert.role = "alert".
     alert.role = type;
     alert.innerText = `${msg} ${res.status} ${res.statusText}`;
     main.prepend(alert);
