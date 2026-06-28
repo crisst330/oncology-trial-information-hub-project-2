@@ -29,6 +29,9 @@ This project was developed as part of CS 5610 Web Development at Northeastern Un
 
 ## Google Slides
 
+<!-- REVIEW: there's no blank line between the URL below and the --- under it, so
+     Markdown reads the URL as a heading and renders it huge instead of showing a
+     divider. Adding a blank line before the --- fixes it. -->
 https://docs.google.com/presentation/d/1wryO1SExtAQJVouA0PnMZT1h5cG3DrpA9B0AhTrzYsM/edit?usp=sharing
 ---
 
